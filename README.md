@@ -6,6 +6,10 @@ Gallery of architectural images organized by categories.
 
 View all images in an interactive gallery by opening `image-gallery.html` in your web browser.
 
+## Categorized Link List
+
+See `IMAGE-LINKS.md` for a complete categorized list of all image links with embed codes (HTML and Markdown) ready to copy and use.
+
 ### Categories
 
 - **🏡 Biệt thự (Villa)** - 4 images
