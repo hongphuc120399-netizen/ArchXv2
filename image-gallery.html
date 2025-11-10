@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchXv2 - Image Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        
+        .category {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            color: #34495e;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .image-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .image-info {
+            padding: 15px;
+        }
+        
+        .image-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+            font-size: 0.95em;
+        }
+        
+        .embed-link {
+            display: block;
+            padding: 8px 15px;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .embed-link:hover {
+            background: #764ba2;
+        }
+        
+        .copy-link {
+            display: block;
+            padding: 8px 15px;
+            background: #27ae60;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        
+        .copy-link:hover {
+            background: #229954;
+        }
+        
+        .stats {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+        }
+        
+        .stats h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        
+        .stats p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArchXv2</h1>
+        <p class="subtitle">Gallery of Architectural Images</p>
+        
+        <!-- Biệt thự Category -->
+        <div class="category">
+            <h2 class="category-title">🏡 Biệt thự (Villa)</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="Biệt thự/50 Gorgeous House Arch Designs That Redefine….jpg" alt="50 Gorgeous House Arch Designs">
+                    <div class="image-info">
+                        <div class="image-name">50 Gorgeous House Arch Designs That Redefine….jpg</div>
+                        <a href="Biệt thự/50 Gorgeous House Arch Designs That Redefine….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Biệt thự/50 Gorgeous House Arch Designs That Redefine….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Biệt thự/Modern Japanese House_ Minimalist and Harmonious….jpg" alt="Modern Japanese House">
+                    <div class="image-info">
+                        <div class="image-name">Modern Japanese House_ Minimalist and Harmonious….jpg</div>
+                        <a href="Biệt thự/Modern Japanese House_ Minimalist and Harmonious….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Biệt thự/Modern Japanese House_ Minimalist and Harmonious….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Biệt thự/Where Modern Elegance Meets Timeless Grandeur🏡🌿….jpg" alt="Where Modern Elegance Meets Timeless Grandeur">
+                    <div class="image-info">
+                        <div class="image-name">Where Modern Elegance Meets Timeless Grandeur🏡🌿….jpg</div>
+                        <a href="Biệt thự/Where Modern Elegance Meets Timeless Grandeur🏡🌿….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Biệt thự/Where Modern Elegance Meets Timeless Grandeur🏡🌿….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Biệt thự/image.png" alt="image">
+                    <div class="image-info">
+                        <div class="image-name">image.png</div>
+                        <a href="Biệt thự/image.png" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Biệt thự/image.png')">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Công Trình Category -->
+        <div class="category">
+            <h2 class="category-title">🏗️ Công Trình (Construction)</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="Công Trình/#structure.jpg" alt="structure">
+                    <div class="image-info">
+                        <div class="image-name">#structure.jpg</div>
+                        <a href="Công Trình/#structure.jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Công Trình/#structure.jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Công Trình/(SC) Itajaí _ Laguna 182 _ 30 pavimentos….jpg" alt="Itajaí Laguna 182">
+                    <div class="image-info">
+                        <div class="image-name">(SC) Itajaí _ Laguna 182 _ 30 pavimentos….jpg</div>
+                        <a href="Công Trình/(SC) Itajaí _ Laguna 182 _ 30 pavimentos….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Công Trình/(SC) Itajaí _ Laguna 182 _ 30 pavimentos….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Công Trình/MODERN RESIDENCE  FACADE.jpg" alt="Modern Residence Facade">
+                    <div class="image-info">
+                        <div class="image-name">MODERN RESIDENCE  FACADE.jpg</div>
+                        <a href="Công Trình/MODERN RESIDENCE  FACADE.jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Công Trình/MODERN RESIDENCE  FACADE.jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Công Trình/Projetar Studio também é sinônimo de qualidade em….jpg" alt="Projetar Studio">
+                    <div class="image-info">
+                        <div class="image-name">Projetar Studio também é sinônimo de qualidade em….jpg</div>
+                        <a href="Công Trình/Projetar Studio também é sinônimo de qualidade em….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Công Trình/Projetar Studio também é sinônimo de qualidade em….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Công Trình/Stylish apartment building with balconies and palm….jpg" alt="Stylish apartment building">
+                    <div class="image-info">
+                        <div class="image-name">Stylish apartment building with balconies and palm….jpg</div>
+                        <a href="Công Trình/Stylish apartment building with balconies and palm….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Công Trình/Stylish apartment building with balconies and palm….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Công Trình/Thiết kế nhà ống 7 tầng có thang máy vừa ở vừa….jpg" alt="Thiết kế nhà ống 7 tầng">
+                    <div class="image-info">
+                        <div class="image-name">Thiết kế nhà ống 7 tầng có thang máy vừa ở vừa….jpg</div>
+                        <a href="Công Trình/Thiết kế nhà ống 7 tầng có thang máy vừa ở vừa….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Công Trình/Thiết kế nhà ống 7 tầng có thang máy vừa ở vừa….jpg')">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Nhà Phố Category -->
+        <div class="category">
+            <h2 class="category-title">🏘️ Nhà Phố (Townhouse)</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="Nhà Phố/22-24 Napier Street, North Strathfield, NSW 2137….jpg" alt="22-24 Napier Street">
+                    <div class="image-info">
+                        <div class="image-name">22-24 Napier Street, North Strathfield, NSW 2137….jpg</div>
+                        <a href="Nhà Phố/22-24 Napier Street, North Strathfield, NSW 2137….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Nhà Phố/22-24 Napier Street, North Strathfield, NSW 2137….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Nhà Phố/58 Sleek Modern Villa Designs to Inspire Your Next….jpg" alt="58 Sleek Modern Villa Designs">
+                    <div class="image-info">
+                        <div class="image-name">58 Sleek Modern Villa Designs to Inspire Your Next….jpg</div>
+                        <a href="Nhà Phố/58 Sleek Modern Villa Designs to Inspire Your Next….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Nhà Phố/58 Sleek Modern Villa Designs to Inspire Your Next….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Nhà Phố/Be amazed by urban architectural perfection! This….jpg" alt="Be amazed by urban architectural perfection">
+                    <div class="image-info">
+                        <div class="image-name">Be amazed by urban architectural perfection! This….jpg</div>
+                        <a href="Nhà Phố/Be amazed by urban architectural perfection! This….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Nhà Phố/Be amazed by urban architectural perfection! This….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Nhà Phố/Elegant White Townhouse with Black Accents….jpg" alt="Elegant White Townhouse">
+                    <div class="image-info">
+                        <div class="image-name">Elegant White Townhouse with Black Accents….jpg</div>
+                        <a href="Nhà Phố/Elegant White Townhouse with Black Accents….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Nhà Phố/Elegant White Townhouse with Black Accents….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Nhà Phố/Save this budget-friendly modern townhouse….jpg" alt="Save this budget-friendly modern townhouse">
+                    <div class="image-info">
+                        <div class="image-name">Save this budget-friendly modern townhouse….jpg</div>
+                        <a href="Nhà Phố/Save this budget-friendly modern townhouse….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Nhà Phố/Save this budget-friendly modern townhouse….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Nhà Phố/Transform your townhouse with this stunning white….jpg" alt="Transform your townhouse">
+                    <div class="image-info">
+                        <div class="image-name">Transform your townhouse with this stunning white….jpg</div>
+                        <a href="Nhà Phố/Transform your townhouse with this stunning white….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Nhà Phố/Transform your townhouse with this stunning white….jpg')">Copy Link</button>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="Nhà Phố/Visit the link to shop the image! Architectural….jpg" alt="Visit the link to shop the image">
+                    <div class="image-info">
+                        <div class="image-name">Visit the link to shop the image! Architectural….jpg</div>
+                        <a href="Nhà Phố/Visit the link to shop the image! Architectural….jpg" class="embed-link" target="_blank">View Image</a>
+                        <button class="copy-link" onclick="copyToClipboard('Nhà Phố/Visit the link to shop the image! Architectural….jpg')">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h3>Gallery Statistics</h3>
+            <p><strong>Total Categories:</strong> 3 | <strong>Total Images:</strong> 17</p>
+            <p>Biệt thự: 4 images | Công Trình: 6 images | Nhà Phố: 7 images</p>
+        </div>
+    </div>
+    
+    <script>
+        function copyToClipboard(link) {
+            // Get the full URL
+            const fullUrl = window.location.origin + window.location.pathname.replace('image-gallery.html', '') + link;
+            
+            // Create a temporary textarea element
+            const textarea = document.createElement('textarea');
+            textarea.value = fullUrl;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            
+            // Select and copy the text
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Remove the temporary element
+            document.body.removeChild(textarea);
+            
+            // Show feedback
+            alert('Link copied to clipboard:\n' + fullUrl);
+        }
+    </script>
+</body>
+</html>
