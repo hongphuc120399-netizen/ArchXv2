@@ -6,9 +6,10 @@ Gallery of architectural images organized by categories.
 
 View all images in an interactive gallery by opening `image-gallery.html` in your web browser.
 
-## Categorized Link List
+## Embed Codes
 
-See `IMAGE-LINKS.md` for a complete categorized list of all image links with embed codes (HTML and Markdown) ready to copy and use.
+- **`EMBED-ALL-IMAGES.md`** - Ready-to-use embed code for ALL images organized by category (single copy-paste solution)
+- **`IMAGE-LINKS.md`** - Individual embed codes for each image with detailed documentation
 
 ### Categories
 
