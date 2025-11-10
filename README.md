@@ -8,6 +8,7 @@ View all images in an interactive gallery by opening `image-gallery.html` in you
 
 ## Embed Codes
 
+- **`GITHUB-RAW-URLS.md`** - Direct GitHub raw URLs for all images (http://raw.githubusercontent.com/...)
 - **`EMBED-ALL-IMAGES.md`** - Ready-to-use embed code for ALL images organized by category (single copy-paste solution)
 - **`IMAGE-LINKS.md`** - Individual embed codes for each image with detailed documentation
 
